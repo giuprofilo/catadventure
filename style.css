@@ -1,0 +1,28 @@
+body {
+  background-color: #282c30;
+  font-family: sans-serif;
+}
+
+header {
+  display: flex;
+  justify-content: center;
+}
+
+.logo {
+  margin: auto;
+  width: 600px;
+  padding: 20px;
+}
+
+#gameBoard {
+  width: 600px;
+  border: 2px solid #000;
+  text-align: center;
+  background-color: #cfd0d1;
+  box-shadow: 5px 5px 10px black;
+}
+
+#btnEnviar {
+  width: 100px;
+  height: 60px;
+}
