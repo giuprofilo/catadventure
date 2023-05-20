@@ -15,7 +15,7 @@ const historia = {
         destino: "batalha",
       },
       {
-        escolha: "Ir tirar uma soneca no telhado",
+        escolha: "Tirar uma soneca no telhado",
         destino: "final",
       },
     ],
@@ -25,7 +25,7 @@ const historia = {
     titulo:"Capítulo 2",
     imagem: "images/cat-objects.webp",
     historia:
-      "Assim que entra no castelo, dá de cara com um cão não muito amigável.<br> Você olha ao redor e as únicas coisas que vê e um pacote de catnipt em cima de uma mesinha, que tem um odor magnético, e um pequeno laser de bolso",
+      "Assim que entra no castelo, dá de cara com um cão não muito amigável.<br> Você olha ao redor e as únicas coisas que vê são um pacote de catnipt em cima de uma mesinha, que tem um odor magnético, e um pequeno laser de bolso",
     escolhas: [
       {
         escolha: "Rolar no Catnip",
@@ -53,10 +53,10 @@ const historia = {
     titulo: "Capítulo 3",
     imagem: "images/cao.jpg",
     historia:
-      "Você aponta o laser para os olhos dele, o inimigo fica cego de um olho, que ganha tempo para voce fugir",
+      "Você aponta o laser para os olhos dele, o inimigo fica cego de um olho, o que ganha tempo para voce fugir",
     escolhas: [
       {
-        escolha: "Subir na cortina que da acesso ao segundo andar",
+        escolha: "Subir na cortina que dá acesso ao segundo andar",
         destino: "pate",
       },
       {
