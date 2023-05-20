@@ -69,7 +69,7 @@ const historia = {
     titulo: "Capítulo 4",
     imagem: "images/pate.jpg",
     historia:
-      "Andando pelo castelo acaba encontrando a cozinha, onde consegue ver pacotinhos do seu patê favorito de atum! <br> Parece que suas oracoes ao Grande Deus Gato Pançudo foram atendidas, pois esta faminto",
+      "Andando pelo castelo acaba encontrando a cozinha, onde consegue ver pacotinhos do seu patê favorito de atum! <br> Parece que suas orações ao Grande Deus Gato Pançudo foram atendidas, pois está faminto",
     escolhas: [
       {
         escolha: "Comer todos que puder",
