@@ -9,9 +9,11 @@ header {
 }
 
 .logo {
+  display: flex;
+  justify-content: center;
   margin: auto;
-  width: 600px;
-  padding: 20px;
+  width: 550px;
+  padding: 6px;
 }
 
 #gameBoard {
