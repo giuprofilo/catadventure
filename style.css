@@ -25,6 +25,7 @@ header {
 }
 
 #btnEnviar {
-  width: 100px;
+  width: auto;
   height: 60px;
+  
 }

@@ -5,10 +5,10 @@ const gameBoard = document.querySelector("#gameBoard");
 const historia = {
   passoAtual: "inicio",
   inicio: {
-    titulo: "Capitulo 1",
-    imagem: "images/cat1.jpg",
+    titulo: "Capítulo  1",
+    imagem: "images/inicio.jpg",
     historia:
-      "Ola,. Voce estava andando na floresta perseguindo um ratinho, que te levou para este castelo.<br>O que voce faz?",
+      "Você estava andando na floresta perseguindo um ratinho, que te levou para este castelo. <br> O que você faz?",
     escolhas: [
       {
         escolha: "Entrar no castelo",
@@ -22,10 +22,10 @@ const historia = {
   },
 
   batalha: {
-    titulo:"",
-    imagem: "",
+    titulo:"Capítulo 2",
+    imagem: "images/cat-objects.webp",
     historia:
-      "Assim que entra no castelo, da de cara com um cao nao muito amigavel.<br> Voce olha ao redor e as unicas coisas que ve e um pacote de catnipt em cima de uma mesinha, que tem um odor magnetico, e um pequeno laser de bolso",
+      "Assim que entra no castelo, dá de cara com um cão não muito amigável.<br> Você olha ao redor e as únicas coisas que vê e um pacote de catnipt em cima de uma mesinha, que tem um odor magnético, e um pequeno laser de bolso",
     escolhas: [
       {
         escolha: "Rolar no Catnip",
@@ -38,10 +38,10 @@ const historia = {
     ],
   },
   armadura: {
-    titulo: "",
-    imagem: "",
+    titulo: "Capítulo 3",
+    imagem: "images/catnip.jpg",
     historia:
-      "Voce rola na erva verdinha e ganha + 100 de armadura! <br> Os ataques do inimigo nao surtem efeito e ele desiste da luta",
+      "Você rola na erva verdinha e ganha + 100 de armadura! <br> Os ataques do inimigo não surtem efeito e ele desiste da luta",
     escolhas: [
       {
         escolha: "Continuar explorando",
@@ -50,10 +50,10 @@ const historia = {
     ],
   },
   luta: {
-    titulo: "",
-    imagem: "",
+    titulo: "Capítulo 3",
+    imagem: "images/cao.jpg",
     historia:
-      "Voce aponta o laser para os olhos dele, o inimigo fica cego de um olho, que ganha tempo para voce fugir",
+      "Você aponta o laser para os olhos dele, o inimigo fica cego de um olho, que ganha tempo para voce fugir",
     escolhas: [
       {
         escolha: "Subir na cortina que da acesso ao segundo andar",
@@ -66,10 +66,10 @@ const historia = {
     ],
   },
   pate: {
-    titulo: "",
-    imagem: "",
+    titulo: "Capítulo 4",
+    imagem: "images/pate.jpg",
     historia:
-      "Andando pelo castelo acaba encontrando a cozinha, onde consegue ver pacotinhos do seu pate favorito de atum! <br> Parece que suas oracoes ao Grande Deus Gato Pancudo foram atendidas, pois esta faminto",
+      "Andando pelo castelo acaba encontrando a cozinha, onde consegue ver pacotinhos do seu patê favorito de atum! <br> Parece que suas oracoes ao Grande Deus Gato Pançudo foram atendidas, pois esta faminto",
     escolhas: [
       {
         escolha: "Comer todos que puder",
@@ -77,22 +77,32 @@ const historia = {
       },
       {
         escolha: "Comer 1 e guardar o restante na sua mochila para mais tarde",
-        destino: "batalha2",
+        destino: "final3",
       },
     ],
   },
   final: {
-    titulo: "",
-    imagem: "",
+    titulo: "Fim",
+    imagem: "images/sadcat.jpg",
+    historia: "Parece que sua aventura chegou ao fim...",
     destinoInicial: 'inicio',
-    buttonText: "Let's try this again"
+    buttonText: "Voltar ao início "
   },
   final2: {
-    titulo: "Voce comeu demais, acabou dormindo na cozinha e foi encontrado por um cao guarda",
-    imagem: "",
+    titulo: "Capítulo 5",
+    historia: "Voce comeu demais, acabou dormindo na cozinha e foi encontrado por um cão guarda",
+    imagem: "images/preso.jpg",
     destinoInicial: 'inicio',
-    buttonText: "Let's try this again"
-  }
+    buttonText: "Voltar ao início "
+  },
+
+  final3: {
+    titulo: "Capítulo 5",
+    historia: "Parabéns, você conseguiu vencer os obstáculos e ainda levar sache pra casa!",
+    imagem: "images/final.jpg",
+    destinoInicial: 'inicio',
+    buttonText: "Voltar ao início "
+  },
 };
 
 //criando a nova pag do jogo ao clicar no botao
@@ -100,6 +110,13 @@ const historia = {
 startBtn.addEventListener("click", mostrarCena);
 
 function mostrarCena() {
+  let btnText = "Proximo"
+  if (historia[historia.passoAtual].buttonText) {
+    btnText = historia[historia.passoAtual].buttonText
+  }
+  // if ( "data-destino" === "batalha2") {
+  //   historia.passoAtual = batalha();
+  // }
   gameBoard.innerHTML = `
     <header>
       <h1> ${historia[historia.passoAtual].titulo} </h1>
@@ -110,15 +127,25 @@ function mostrarCena() {
         <img class="logo" src="./${historia[historia.passoAtual].imagem}" />
         <p>${historia[historia.passoAtual].historia}</p>
         ${getInput()}
-        <button id="btnEnviar" class="shadow p-3 mb-5 bg-body-tertiary rounded">Proximo</button>        
+        <button id="btnEnviar" class="shadow p-3 mb-5 bg-body-tertiary rounded">${btnText}</button>        
     </div>       
-    `;
+    `
+   
+    ;
   //ao clicar no botao "proximo", seguir p/ a opcao selecionada
   const btnEnviar = document.querySelector("#btnEnviar");
   btnEnviar.addEventListener("click", () => {
     getInputValue();
   });
 }
+
+// function batalha() {
+//   gameBoard.innerHTML = `
+//     <body>
+//       <h1>njcdsus</h1>
+//     </body>
+//   `
+// }
 
 // verifica qual caixa de opcao foi marcada
 function getInputValue() {
@@ -131,12 +158,16 @@ function getInputValue() {
     }
   }
   historia.passoAtual = historia[historia.passoAtual].destinoInicial
+  mostrarCena();
 }
 
 //funcao que percorre os elementos da historia e pega
 //as escolhas disponiveis
 function getInput() {
   var input = "";
+  if(!historia[historia.passoAtual].escolhas) {
+    return ""
+  }
   for (var i = 0; i < historia[historia.passoAtual].escolhas.length; i++) {
     //insere as opcoes disponiveis
     //o data-destino captura o elemento destino, dentro das escolhas
